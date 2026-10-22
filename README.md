@@ -1,29 +1,38 @@
-# TP1 - Paradigmas de Programación
 
-**UTN Facultad Regional Mendoza**
+# Sistema de Gestión de Eventos Universitarios
 
-## Descripción
-Sistema de gestión de eventos universitarios desarrollado en Java, aplicando los conceptos fundamentales de la Programación Orientada a Objetos (POO).
+Proyecto desarrollado en Java para aplicar conceptos de Programación Orientada a Objetos mediante la gestión de eventos universitarios, actividades e inscripciones.
 
 ## Funcionalidades
-- Creación de estudiantes y eventos.
-- Asignación de salas y creación de actividades.
-- Inscripción de estudiantes en charlas y talleres.
-- Cálculo de costos de los eventos.
-- Visualización de datos e inscripciones.
-- Creación de copias de eventos y conteo de instancias.
 
-## Conceptos aplicados
-- Encapsulamiento y abstracción.
-- Herencia y polimorfismo.
-- Clases abstractas.
-- Constructores y constructor de copia.
-- Colecciones (`List` y `ArrayList`).
-- Atributos y métodos estáticos.
+- Creación y administración de eventos universitarios y salas.
+- Gestión de actividades: charlas, talleres y cursos.
+- Inscripción de estudiantes con control de cupos y excepciones.
+- Confirmación de inscripciones y generación de tickets de acceso.
+- Envío concurrente de tickets mediante hilos (`Thread`).
+- Filtrado de actividades por tipo y cálculo de costos de materiales.
+- Persistencia de eventos mediante serialización de objetos.
+- Aplicación de herencia, clases abstractas, interfaces, clases anidadas y polimorfismo.
 
 ## Tecnologías
+
 - Java
 - IntelliJ IDEA
+- Git y GitHub
+
+## Estructura principal
+
+- `tp1`: clases principales del sistema, como `App`, `EventoUniversitario`, `Actividad`, `Inscripcion`, `Estudiante` y `Sala`.
+- `tp1.hilos`: implementación del envío concurrente de tickets.
+- `tp1.certificacion`: funcionalidades relacionadas con la emisión de certificados.
+- `excepciones`: excepciones personalizadas, como `CupoExcedidoException`.
 
 ## Ejecución
-Abrir el proyecto en IntelliJ IDEA y ejecutar la clase `App`.
+
+1. Clonar o descargar el repositorio.
+2. Abrir el proyecto en IntelliJ IDEA.
+3. Configurar un JDK compatible con el código fuente.
+4. Ejecutar la clase `tp2.App`.
+
+
+
