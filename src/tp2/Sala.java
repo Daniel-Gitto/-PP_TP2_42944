@@ -1,6 +1,6 @@
-package tp1;
-
-public class Sala {
+package tp2;
+import java.io.Serializable;
+public class Sala implements Serializable {
 
     private int id;
     private String nombre;

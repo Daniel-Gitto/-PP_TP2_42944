@@ -1,9 +1,11 @@
-package tp1;
+package tp2;
 
 import java.util.ArrayList;
 import java.util.List;
+import excepciones.CupoExcedidoException;
+import java.io.Serializable;
 
-public abstract class Actividad {
+public abstract class Actividad implements Serializable {
 
     // =========================================
     // ATRIBUTOS
@@ -29,6 +31,7 @@ public abstract class Actividad {
         this.id = id;
         this.titulo = titulo;
 
+
         if (cupoMaximo < CUPO_MINIMO) {
             this.cupoMaximo = CUPO_MINIMO;
         } else {
@@ -43,22 +46,22 @@ public abstract class Actividad {
     // INSCRIBIR ESTUDIANTE
     // =========================================
 
-    public Inscripcion inscribir(Estudiante estudiante) {
+
+    public Inscripcion inscribir(Estudiante estudiante)
+            throws CupoExcedidoException {
 
         if (inscripciones.size() >= cupoMaximo) {
-
-            throw new IllegalStateException(
-                    "No hay cupo disponible para la actividad"
+            throw new CupoExcedidoException(
+                    "No hay cupo disponible para la actividad: " + titulo
             );
         }
 
-        Inscripcion inscripcion =
-                new Inscripcion(estudiante, this);
-
+        Inscripcion inscripcion = new Inscripcion(estudiante, this);
         inscripciones.add(inscripcion);
 
         return inscripcion;
     }
+
 
 
     // =========================================
@@ -111,8 +114,7 @@ public abstract class Actividad {
     // GETTERS
     // =========================================
 
-    public int getId() {
-        return id;
+    public int getId() {return id;
     }
 
     public String getTitulo() {
@@ -120,6 +122,12 @@ public abstract class Actividad {
     }
 
     public int getCupoMaximo() {
+
         return cupoMaximo;
     }
+
+    public List<Inscripcion> getInscripciones() {
+        return inscripciones;
+    }
+
 }

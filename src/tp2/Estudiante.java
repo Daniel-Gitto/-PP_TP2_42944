@@ -1,6 +1,6 @@
-package tp1;
-
-public class Estudiante {
+package tp2;
+import java.io.Serializable;
+public class Estudiante implements Serializable {
 
     private String legajo;
     private String nombre;
